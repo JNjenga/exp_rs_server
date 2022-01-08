@@ -1,0 +1,18 @@
+# Server address and port
+BIND_ADDRESS=127.0.0.1:8080
+
+# Location of the program
+BASE_URL=D:/Projects/pesapal/exp-web-server/public
+
+# Path to interpretor program, in this case it's python
+INTERPRETER_PATH=D:/Python39/python.exe
+
+# Prefix of interpreted language source file
+INTERPRETER_SOURCE_PREFIX=.py
+
+# Rewrites and App properties
+
+/=index.html
+
+# Error page
+404_PAGE=404.html

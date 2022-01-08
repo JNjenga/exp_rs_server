@@ -3,11 +3,15 @@
 This is a single-threaded webserver written in rust that can serve static files and dynamic content via python
 or any interpreted language that can write to `stdout` :).
 
-## Limitations
+## System overview
+
+![Conceptual diagram](/screenshots/conceptual_diagram.png)
+
+## Limitations/Improvements
 
 - Single threaded
-- Parameters passed to the iterpretor from requests(POST/GET) are as large as what the iterpretor supportes
-
+- Only supports http and content-type: text/html
+- Does not support request parameters
 
 ## How to get and build
 
@@ -18,7 +22,8 @@ cd exp_rs_server
 ```
 
 2. Build
-This project uses `cargo`, rust's package manager,
+
+This project uses [cargo](https://doc.rust-lang.org/cargo/), rust's package manager,
 
 To build the project 
 
@@ -30,6 +35,7 @@ cargo build
 
 This server uses a simple text file format to manage the configurations. 
 Below is a summary of the format
+
 
 ```
 PROPERTY=VALUE
@@ -50,9 +56,15 @@ BASE_URL=D:/server_demo
 # Path to interpretor program, in this case it's python
 INTERPRETER_PATH=D:/Python39/python.exe
 
-# Rewrites
+# Prefix of interpreted language source file
+INTERPRETER_SOURCE_PREFIX=.py
 
-/hello=/test.py
+# Rewrites and App properties
+
+/=index.html
+
+# Error page
+404_PAGE=404.html
 ```
 
 2. Launch application
@@ -60,6 +72,9 @@ INTERPRETER_PATH=D:/Python39/python.exe
 ```
 cargo run config.txt
 ```
+
+# Demo video
+
 
 # Authors
 

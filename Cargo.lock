@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "exp-web-server"
+name = "exp_rs_server"
 version = "0.1.0"
