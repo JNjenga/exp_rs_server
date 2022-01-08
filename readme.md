@@ -73,9 +73,6 @@ INTERPRETER_SOURCE_PREFIX=.py
 cargo run config.txt
 ```
 
-# Demo video
-
-
 # Authors
 
 - [@jnjenga](https://www.github.com/jnjenga)
